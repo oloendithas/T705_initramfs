@@ -86,15 +86,15 @@ on post-fs-data
     restorecon /data/privatemode
 
 # Bluetooth dhcpcd config
-service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    class main
-	disabled
-	oneshot
+#service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
+#    class main
+#	disabled
+#	oneshot
 
-service iprenew_bt-pan /system/bin/dhcpcd -n
-    class late_start
-	disabled
-	oneshot
+#service iprenew_bt-pan /system/bin/dhcpcd -n
+#    class late_start
+#	disabled
+#	oneshot
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -500,10 +500,10 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     ioprio be 0
 
 # MobiCore startup
-service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
-    class core
-    user system
-    group system    
+#service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
+#    class core
+#    user system
+#    group system    
 
 #Private Mode
 service privatemode /system/bin/sdcard /data/privatemode /mnt/shell/privatemode 1000 1000
